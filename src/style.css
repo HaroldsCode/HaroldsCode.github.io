@@ -132,11 +132,13 @@ html {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
-  .tip-form__group--invalid .tip-form__input {
+  .tip-form__group--invalid .tip-form__group-input .tip-form__input {
     outline: 2px solid #f05353;
+    border-radius: 0.3rem;
   }
-  .tip-form__group--invalid .tip-form__input:focus {
+  .tip-form__group--invalid .tip-form__group-input .tip-form__input:focus {
     outline: 2px solid #f05353;
+    border-radius: 0.3rem;
   }
   .tip-form__group--invalid .tip-form__msj {
     display: inline;
@@ -146,6 +148,27 @@ html {
     font-size: 0.8rem;
     font-weight: 700;
     color: #f05353;
+  }
+  .tip-form__group-input {
+    position: relative;
+  }
+  .tip-form__thumbnail {
+    position: absolute;
+    margin: 0;
+    width: 12%;
+    height: 100%;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    background-color: #f4fafa;
+    z-index: 1;
+  }
+  .tip-form__img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
   }
   .tip-form__label {
     font-size: 1rem;
@@ -157,15 +180,19 @@ html {
   .tip-form__input {
     border: none;
     height: 100%;
+    width: 100%;
     background: #f4fafa;
     font-size: 1.5rem;
     font-weight: 700;
     color: #00494d;
     border-radius: 0.3rem;
     text-align: right;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
   }
   .tip-form__input:focus {
     outline: 2px solid #26c0ab;
+    border-radius: 0.3rem;
   }
   .tip-form__input[type="number"] {
     padding-right: 0.625rem;
@@ -221,6 +248,7 @@ html {
   }
   .tips__input:focus {
     outline: 2px solid #26c0ab;
+    border-radius: 0.3rem;
   }
   .tips__input[type="radio"]:checked + .tips__label {
     background: #26c0ab;
@@ -228,9 +256,11 @@ html {
   }
   .tips__input--invalid {
     outline: 2px solid #f05353;
+    border-radius: 0.3rem;
   }
   .tips__input--invalid:focus {
     outline: 2px solid #f05353;
+    border-radius: 0.3rem;
   }
   .tips__input--custom {
     display: inline;
@@ -309,6 +339,7 @@ html {
   }
   .btn--reset:disabled {
     opacity: 15%;
+    cursor: default;
   }
   .btn--reset:active {
     background-color: #5e7a7d;
@@ -389,6 +420,7 @@ html {
     border-radius: 1rem;
   }
   .tip-form__group {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -411,19 +443,68 @@ html {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .tip-form__group--invalid .tip-form__group-input .tip-form__input {
+    outline: 2px solid #f05353;
+    border-radius: 0.3rem;
+  }
+  .tip-form__group--invalid .tip-form__group-input .tip-form__input:focus {
+    outline: 2px solid #f05353;
+    border-radius: 0.3rem;
+  }
+  .tip-form__group--invalid .tip-form__msj {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 0.2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #f05353;
+  }
+  .tip-form__group-input {
+    position: relative;
+    width: 100%;
+  }
+  .tip-form__thumbnail {
+    position: absolute;
+    margin: 0;
+    width: 12%;
+    height: 100%;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    background-color: #f4fafa;
+    z-index: 1;
+  }
+  .tip-form__img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
   .tip-form__label {
     font-size: 1rem;
     color: #5e7a7d;
   }
+  .tip-form__msj {
+    display: none;
+  }
   .tip-form__input {
     border: none;
     height: 100%;
+    width: 100%;
     background: #f4fafa;
     font-size: 1.5rem;
     font-weight: 700;
     color: #00494d;
     border-radius: 0.3rem;
     text-align: right;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .tip-form__input:focus {
+    outline: 2px solid #26c0ab;
+    border-radius: 0.3rem;
   }
   .tip-form__input[type="number"] {
     padding-right: 0.625rem;
@@ -477,9 +558,21 @@ html {
   .tips__input {
     display: none;
   }
+  .tips__input:focus {
+    outline: 2px solid #26c0ab;
+    border-radius: 0.3rem;
+  }
   .tips__input[type="radio"]:checked + .tips__label {
     background: #26c0ab;
     color: #00494d;
+  }
+  .tips__input--invalid {
+    outline: 2px solid #f05353;
+    border-radius: 0.3rem;
+  }
+  .tips__input--invalid:focus {
+    outline: 2px solid #f05353;
+    border-radius: 0.3rem;
   }
   .tips__input--custom {
     display: inline;
@@ -641,6 +734,7 @@ html {
     border-radius: 1rem;
   }
   .tip-form__group {
+    position: relative;
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
@@ -663,6 +757,48 @@ html {
         -ms-flex-pack: justify;
             justify-content: space-between;
   }
+  .tip-form__group--invalid .tip-form__group-input .tip-form__input {
+    outline: 2px solid #f05353;
+    border-radius: 0.3rem;
+  }
+  .tip-form__group--invalid .tip-form__group-input .tip-form__input:focus {
+    outline: 2px solid #f05353;
+    border-radius: 0.3rem;
+  }
+  .tip-form__group--invalid .tip-form__msj {
+    display: inline;
+    position: absolute;
+    right: 0;
+    top: 0.2rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #f05353;
+  }
+  .tip-form__group-input {
+    position: relative;
+    width: 100%;
+  }
+  .tip-form__thumbnail {
+    position: absolute;
+    margin: 0;
+    width: 12%;
+    height: 100%;
+    border-top-left-radius: 0.3rem;
+    border-bottom-left-radius: 0.3rem;
+    background-color: #f4fafa;
+    z-index: 1;
+  }
+  .tip-form__img {
+    position: absolute;
+    margin: auto;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
+  .tip-form__msj {
+    display: none;
+  }
   .tip-form__label {
     font-size: 1rem;
     color: #5e7a7d;
@@ -670,12 +806,19 @@ html {
   .tip-form__input {
     border: none;
     height: 100%;
+    width: 100%;
     background: #f4fafa;
     font-size: 1.5rem;
     font-weight: 700;
     color: #00494d;
     border-radius: 0.3rem;
     text-align: right;
+    -webkit-box-sizing: border-box;
+            box-sizing: border-box;
+  }
+  .tip-form__input:focus {
+    outline: 2px solid #26c0ab;
+    border-radius: 0.3rem;
   }
   .tip-form__input[type="number"] {
     padding-right: 0.625rem;
@@ -729,9 +872,21 @@ html {
   .tips__input {
     display: none;
   }
+  .tips__input:focus {
+    outline: 2px solid #26c0ab;
+    border-radius: 0.3rem;
+  }
   .tips__input[type="radio"]:checked + .tips__label {
     background: #26c0ab;
     color: #00494d;
+  }
+  .tips__input--invalid {
+    outline: 2px solid #f05353;
+    border-radius: 0.3rem;
+  }
+  .tips__input--invalid:focus {
+    outline: 2px solid #f05353;
+    border-radius: 0.3rem;
   }
   .tips__input--custom {
     display: inline;

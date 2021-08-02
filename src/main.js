@@ -12,10 +12,10 @@ const infoPercent = document.getElementById('infoPercent');
 function mod(element, variable){
     if(element['value'] >= 0){
         if(element['value'] == 0){
-            element.parentElement.classList.add('tip-form__group--invalid')
+            element.parentElement.parentElement.classList.add('tip-form__group--invalid')
             variable['value'] = ''
         }else{
-            element.parentElement.classList.remove('tip-form__group--invalid')
+            element.parentElement.parentElement.classList.remove('tip-form__group--invalid')
             variable['value'] = element['value'];
         }
     }
