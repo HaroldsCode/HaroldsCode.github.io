@@ -1,0 +1,556 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;1,700&display=swap');
+$Strong-cyan: hsl(172, 67%, 45%)
+$Very-dark-cyan: hsl(183, 100%, 15%)
+$Dark-grayish-cyan: hsl(186, 14%, 43%)
+$Semi-dark-grayish-cyan: hsl(184, 14%, 56%)
+$Light-grayish-cyan: hsl(185, 41%, 84%)
+$Light-grayish-cyan-input: hsl(189, 41%, 97%)
+$Color-error: #f05353
+$White: hsl(0, 0%, 100%)
+$font-weight-normal: 400
+$font-weight-input: 700
+*
+    font:
+        family: 'Space Mono', monospace
+        weight: $font-weight-normal
+html
+    height: 100vh
+@media ( max-width: 480px )
+    .btn
+        cursor: pointer
+        text-decoration: none
+        border: none
+        padding: 0
+        color: $Very-dark-cyan
+        &:visited
+            color: $Very-dark-cyan
+        &--reset
+            padding: 0.7rem
+            text-transform: uppercase
+            background-color: $Strong-cyan
+            font:
+                weight: $font-weight-input
+            border:
+                radius: 0.3rem
+            &:disabled
+                opacity: 15%
+                cursor: default
+            &:active
+                background-color: $Dark-grayish-cyan
+    .container
+        position: relative
+        width: 100%
+        height: 100%
+        background:
+            color: $Light-grayish-cyan
+        display: flex
+        flex-flow: column
+    .header
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        gap: 0.3rem
+        font-size: 1.8rem
+        margin: 3rem 0
+        &__title
+            font-size: 1em
+            letter-spacing: 0.4em
+            color: $Very-dark-cyan
+    .group
+        background: $White
+        padding: 1.5rem
+        border:
+            top-left-radius: 1.5rem
+            top-right-radius: 1.5rem
+        height: 100%
+    .tip-form
+        display: flex
+        flex-flow: column
+        gap: 1.5rem
+        box-sizing: border-box
+        &__block
+            width: 100%
+            display: flex
+            flex-flow: column
+            gap: 1rem
+            position: relative
+            &--dark
+                box-sizing: border-box
+                padding: 1rem
+                gap: 1.5rem
+                background: 
+                    color: $Very-dark-cyan
+                border:
+                    radius: 1rem
+        &__group
+            position: relative
+            display: flex
+            flex-flow: column
+            gap: 0.6rem
+            height: auto
+            &--row
+                flex-flow: row
+                align-items: center
+                justify-content: space-between
+            &--invalid 
+                & .tip-form__input
+                    outline: 2px solid $Color-error
+                    &:focus
+                        outline: 2px solid $Color-error
+                & .tip-form__msj
+                    display: inline
+                    position: absolute
+                    right: 0
+                    top: 0.2rem
+                    font:
+                        size: 0.8rem
+                        weight: $font-weight-input
+                    color: $Color-error
+        &__label
+            font-size: 1rem
+            color: $Dark-grayish-cyan
+        &__msj
+            display: none
+        &__input
+            border: none
+            height: 100%
+            background: $Light-grayish-cyan-input
+            font:
+                size: 1.5rem
+                weight: $font-weight-input
+            color: $Very-dark-cyan
+            border: 
+                radius: 0.3rem
+            text-align: right
+            &:focus
+                outline: 2px solid $Strong-cyan
+            &[type="number"]
+                padding-right: 0.625rem
+                &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+                    -webkit-appearance: none
+                    margin: 0
+        &__results
+            display: flex
+            flex-flow: column
+            gap: 0.3125rem
+        &__title
+            color: $White
+            font-size: 1rem
+        &__subtitle
+            color: $Semi-dark-grayish-cyan
+            font-size: 0.8rem
+        &__result
+            font:
+                weight: $font-weight-input
+                size: 1.5rem
+            color: $Strong-cyan
+            &::before
+                content: '$'
+    .tips
+        position: relative
+        &__title
+            font-size: 1rem
+            color: $Dark-grayish-cyan
+            margin: 0
+        &__group
+            display: grid
+            grid-template-areas: 1.5rem 
+            grid-template-columns: repeat(auto-fill, minmax(40%, 1fr) )
+            gap: 15px
+            
+        &__input
+            display: none
+            &:focus
+                outline: 2px solid $Strong-cyan
+            &[type="radio"]:checked + .tips__label
+                background: $Strong-cyan
+                color: $Very-dark-cyan
+            &--invalid 
+                outline: 2px solid $Color-error
+                &:focus
+                    outline: 2px solid $Color-error
+            &--custom
+                display: inline
+                border: none
+                background: $Light-grayish-cyan-input
+                font:
+                    size: 1.5rem
+                    weight: $font-weight-input
+                color: $Very-dark-cyan
+                border: 
+                    radius: 0.3rem
+                text-align: right
+                z-index: 1
+                &[type="number"]
+                    padding-right: 0.625rem
+                    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+                        -webkit-appearance: none
+                        margin: 0
+        &__label, & .tip-form__input
+            font-size: 1.2rem
+            display: flex
+            align-items: center
+            justify-content: center
+        &__label
+            cursor: pointer
+            font-weight: $font-weight-input
+            border: 
+                radius: 0.3rem
+            background: $Very-dark-cyan
+            padding: 0.8rem
+            color: $White
+    .footer
+        padding-top: 2rem
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        gap: 0.5rem    
+
+@media (min-width: 481px) and (max-width: 768px)
+    .btn
+        cursor: pointer
+        text-decoration: none
+        border: none
+        padding: 0
+        color: $Very-dark-cyan
+        &:visited
+            color: $Very-dark-cyan
+        &--reset
+            padding: 0.7rem
+            text-transform: uppercase
+            background-color: $Strong-cyan
+            font:
+                weight: $font-weight-input
+            border:
+                radius: 0.3rem
+            &:disabled
+                opacity: 15%
+            &:active
+                background-color: $Dark-grayish-cyan
+    .container
+        width: 481px
+        height: fit-content
+        background:
+            color: $Light-grayish-cyan
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+    .header
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        gap: 0.3rem
+        font-size: 1.8rem
+        margin-bottom: 3rem
+        &__title
+            font-size: 1em
+            letter-spacing: 0.4em
+            color: $Very-dark-cyan
+    .group
+        background: $White
+        padding: 1.5rem
+        border:
+            radius: 1.5rem
+            top-right-radius: 1.5rem
+        height: 100%
+    .tip-form
+        display: flex
+        flex-flow: column
+        gap: 1.5rem
+        box-sizing: border-box
+        &__block
+            width: 100%
+            display: flex
+            flex-flow: column
+            gap: 1rem
+            position: relative
+            &--dark
+                box-sizing: border-box
+                padding: 1rem
+                gap: 1.5rem
+                background: 
+                    color: $Very-dark-cyan
+                border:
+                    radius: 1rem
+        &__group
+            display: flex
+            flex-flow: column
+            gap: 0.6rem
+            height: auto
+            &--row
+                flex-flow: row
+                align-items: center
+                justify-content: space-between
+        &__label
+            font-size: 1rem
+            color: $Dark-grayish-cyan
+        &__input
+            border: none
+            height: 100%
+            background: $Light-grayish-cyan-input
+            font:
+                size: 1.5rem
+                weight: $font-weight-input
+            color: $Very-dark-cyan
+            border: 
+                radius: 0.3rem
+            text-align: right
+            &[type="number"]
+                padding-right: 0.625rem
+                &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+                    -webkit-appearance: none
+                    margin: 0
+        &__results
+            display: flex
+            flex-flow: column
+            gap: 0.3125rem
+        &__title
+            color: $White
+            font-size: 1rem
+        &__subtitle
+            color: $Semi-dark-grayish-cyan
+            font-size: 0.8rem
+        &__result
+            font:
+                weight: $font-weight-input
+                size: 1.5rem
+            color: $Strong-cyan
+            &::before
+                content: '$'
+    .tips
+        position: relative
+        &__title
+            font-size: 1rem
+            color: $Dark-grayish-cyan
+            margin: 0
+        &__group
+            display: grid
+            grid-template-areas: 1.5rem 
+            grid-template-columns: repeat(auto-fill, minmax(40%, 1fr) )
+            gap: 15px
+        &__input
+            display: none
+
+            &[type="radio"]:checked + .tips__label
+                background: $Strong-cyan
+                color: $Very-dark-cyan
+
+            &--custom
+                display: inline
+                border: none
+                background: $Light-grayish-cyan-input
+                font:
+                    size: 1.5rem
+                    weight: $font-weight-input
+                color: $Very-dark-cyan
+                border: 
+                    radius: 0.3rem
+                text-align: right
+                z-index: 1
+                &[type="number"]
+                    padding-right: 0.625rem
+                    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+                        -webkit-appearance: none
+                        margin: 0
+        &__label, & .tip-form__input
+            font-size: 1.2rem
+            display: flex
+            align-items: center
+            justify-content: center
+        &__label
+            cursor: pointer
+            font-weight: $font-weight-input
+            border: 
+                radius: 0.3rem
+            background: $Very-dark-cyan
+            padding: 0.8rem
+            color: $White
+    .footer
+        padding-top: 2rem
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        gap: 0.5rem  
+
+@media (min-width: 769px)
+    .btn
+        cursor: pointer
+        text-decoration: none
+        border: none
+        padding: 0
+        color: $Very-dark-cyan
+        &:visited
+            color: $Very-dark-cyan
+        &--reset
+            position: absolute
+            left: 2rem
+            bottom: 2rem
+            width: calc( 100% -  4rem)
+            padding: 0.7rem
+            text-transform: uppercase
+            background-color: $Strong-cyan
+            font:
+                weight: $font-weight-input
+            border:
+                radius: 0.3rem
+            &:disabled
+                opacity: 15%
+            &:active
+                background-color: $Dark-grayish-cyan
+    .container
+        min-width: 769px
+        max-width: 850px
+        height: fit-content
+        box-sizing: border-box
+        background:
+            color: $Light-grayish-cyan
+        position: absolute
+        top: 0
+        bottom: 0
+        left: 0
+        right: 0
+        margin: auto
+    .header
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        gap: 0.3rem
+        font-size: 1.8rem
+        margin-bottom: 3rem
+        &__title
+            font-size: 1em
+            letter-spacing: 0.4em
+            color: $Very-dark-cyan
+    .group
+        background: $White
+        padding: 1.5rem
+        border:
+            radius: 1.5rem
+        height: 100%
+    .tip-form
+        display: grid
+        grid-template-columns: 1fr 1fr
+        gap: 3rem
+        box-sizing: border-box
+        &__block
+            width: 100%
+            display: flex
+            flex-flow: column
+            gap: 1rem
+            position: relative
+            &--dark
+                box-sizing: border-box
+                padding: 2rem
+                gap: 2rem
+                background: 
+                    color: $Very-dark-cyan
+                border:
+                    radius: 1rem
+        &__group
+            display: flex
+            flex-flow: column
+            gap: 0.6rem
+            height: auto
+            &--row
+                flex-flow: row
+                align-items: center
+                justify-content: space-between
+        &__label
+            font-size: 1rem
+            color: $Dark-grayish-cyan
+        &__input
+            border: none
+            height: 100%
+            background: $Light-grayish-cyan-input
+            font:
+                size: 1.5rem
+                weight: $font-weight-input
+            color: $Very-dark-cyan
+            border: 
+                radius: 0.3rem
+            text-align: right
+            &[type="number"]
+                padding-right: 0.625rem
+                &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+                    -webkit-appearance: none
+                    margin: 0
+        &__results
+            display: flex
+            flex-flow: column
+            gap: 0.3125rem
+        &__title
+            color: $White
+            font-size: 1rem
+        &__subtitle
+            color: $Semi-dark-grayish-cyan
+            font-size: 0.8rem
+        &__result
+            font:
+                weight: $font-weight-input
+                size: 1.5rem
+            color: $Strong-cyan
+            &::before
+                content: '$'
+    .tips
+        position: relative
+        &__title
+            font-size: 1rem
+            color: $Dark-grayish-cyan
+            margin: 0
+        &__group
+            display: grid
+            grid-template-areas: 1.5rem 
+            grid-template-columns: repeat(auto-fill, minmax(40%, 1fr) )
+            gap: 15px
+        &__input
+            display: none
+
+            &[type="radio"]:checked + .tips__label
+                background: $Strong-cyan
+                color: $Very-dark-cyan
+
+            &--custom
+                display: inline
+                border: none
+                background: $Light-grayish-cyan-input
+                font:
+                    size: 1.5rem
+                    weight: $font-weight-input
+                color: $Very-dark-cyan
+                border: 
+                    radius: 0.3rem
+                text-align: right
+                z-index: 1
+                &[type="number"]
+                    padding-right: 0.625rem
+                    &::-webkit-inner-spin-button, &::-webkit-outer-spin-button
+                        -webkit-appearance: none
+                        margin: 0
+        &__label, & .tip-form__input
+            font-size: 1.2rem
+            display: flex
+            align-items: center
+            justify-content: center
+        &__label
+            cursor: pointer
+            font-weight: $font-weight-input
+            border: 
+                radius: 0.3rem
+            background: $Very-dark-cyan
+            padding: 0.8rem
+            color: $White
+    .footer
+        padding-top: 2rem
+        display: flex
+        flex-flow: column
+        align-items: center
+        justify-content: center
+        gap: 0.5rem   

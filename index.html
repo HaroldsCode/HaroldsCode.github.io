@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <title>Frontend Mentor | Tip calculator app</title>
+  <link rel="stylesheet" href="src/normalize.css">
+  <link rel="stylesheet" href="src/style.css">
+</head>
+<body class="container">
+  <header>
+    <h1 class="header">
+      <span class="header__title">SPLI</span>
+      <span class="header__title">TTER</span>
+    </h1>
+  </header>
+  <div class="group">
+    <main class="main">
+      <form class="tip-form" id="tip-form">
+        <div class="tip-form__block">
+          <section class="tip-form__group">
+            <span class="tip-form__msj">Can't be zero</span>
+            <label for="bill" class="tip-form__label">Bill</label>
+            <input type="number" id="bill" min="0" class="tip-form__input tip-form__input--ico" placeholder="0">
+          </section>
+          <section class="tip-form__group tips">
+            <p class="tips__title">Select Tip %</p>
+            <div class="tips__group">
+              <input type="radio" name="tip-percent" id="5-percent" value="0.05" class="tips__input tip_check">
+              <label class="tips__label" for="5-percent">5%</label>
+
+              <input type="radio" name="tip-percent" id="10-percent" value="0.1" class="tips__input tip_check" >
+              <label class="tips__label" for="10-percent">10%</label>
+
+              <input type="radio" name="tip-percent" id="15-percent" value="0.15" class="tips__input tip_check">
+              <label class="tips__label" for="15-percent">15%</label>
+
+              <input type="radio" name="tip-percent" id="25-percent" value="0.25" class="tips__input tip_check">
+              <label class="tips__label" for="25-percent">25%</label>
+
+              <input type="radio" name="tip-percent" id="50-percent" value="0.5" class="tips__input tip_check">
+              <label class="tips__label" for="50-percent">50%</label>
+
+              <input type="radio" name="tip-percent" id="custom-percent" value="0" class="tips__input tip_check" checked>
+              <input type="number" id="custom" class="tips__input tips__input--custom" placeholder="Custom">
+            </div>
+          </section>
+          <section class="tip-form__group">
+            <span class="tip-form__msj">Can't be zero</span>
+            <label for="people" class="tip-form__label">Number of People</label>
+            <input type="number" min="0" id="people" class="tip-form__input tip-form__input--ico" placeholder="0">
+          </section>
+        </div>
+        <div class="tip-form__block tip-form__block--dark">
+          <section class="tip-form__group tip-form__group--row">
+            <div class="tip-form__results">
+              <span class="tip-form__title">Tip Amount</span><span class="tip-form__subtitle">/ person</span>
+            </div>
+            <span class="tip-form__result" id="tip-amount">0</span>
+          </section>
+          <section class="tip-form__group tip-form__group--row">
+            <div class="tip-form__results">
+              <span class="tip-form__title">Total</span><span class="tip-form__subtitle">/ person</span>
+            </div>
+            <span class="tip-form__result" id="total-amount">0</span>
+          </section>
+          <input type="button" class="btn btn--reset" id="btn-reset" value="Reset" disabled>
+        </div>
+        <input type="hidden" name="infoBill" id="infoBill">
+        <input type="hidden" name="infoPeople" id="infoPeople">
+        <input type="hidden" name="infoPercent" id="infoPercent">
+      </form>
+    </main>
+    <footer class="footer">
+      <div class="footer__group">
+        <span class="footer__text">Challenge by </span>
+        <a class="btn btn--footer" href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>
+      </div>
+      <div class="footer__group">
+        <span class="footer__text">Coded by </span>
+        <a class="btn btn--footer" href="https://www.haroldmoreno.com/" target="_blank">Harold Moreno</a>
+      </div>
+    </footer>
+  </div>
+  <script src="src/main.js"></script>
+</body>
+</html>
